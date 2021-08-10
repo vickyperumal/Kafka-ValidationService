@@ -17,7 +17,7 @@ import com.kafka.common.model.ProcessLoanDetails;
 import com.kafka.validation.util.ServiceConnector;
 
 @Service
-public class KafkaProducerService {
+public class ValidationServiceImpl implements ValidationService{
 
 	@Autowired
 	private ServiceConnector serviceConnector;
@@ -27,6 +27,7 @@ public class KafkaProducerService {
 	@Autowired
 	private KafkaTemplate<String, ProcessLoanDetails> kafkaTemplate;
 
+	@Override
 	public void sendMessage(List<LoanDetails> loans) {
 		String key = UUID.randomUUID().toString();
 		ProcessLoanDetails user = validateLoanDetails(loans);
