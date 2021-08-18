@@ -1,6 +1,5 @@
 package com.kafka.validation.service;
 
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -41,7 +40,7 @@ class ValidationServiceImplTest {
 	void setUp() throws Exception {
 		MockitoAnnotations.openMocks(this);
 
-		details = Arrays.asList(new LoanDetails("loanType", 1000L, "loanDate", 5.00, 24, 1234L, 100000L, 5));
+		details = Arrays.asList(new LoanDetails("loanType", 1000L, 4321L,"loanDate", 5.00, 24, 1234L, 100000L, 5));
 	}
 
 	@Test

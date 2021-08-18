@@ -44,7 +44,7 @@ class ValidationLoanControllerTest {
 	void setUp() throws Exception {
 		mapper=new ObjectMapper();
 		this.mockMvc = MockMvcBuilders.standaloneSetup(new ValidationLoanController(service)).build();
-		details = Arrays.asList(new LoanDetails("loanType", 1000L, "loanDate", 5.00, 24, 1234L, 100000L, 5));
+		details = Arrays.asList(new LoanDetails("loanType", 1000L, 4321L,"loanDate", 5.00, 24, 1234L, 100000L, 5));
 	}
 	
 	@Test

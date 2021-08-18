@@ -2,6 +2,7 @@ package com.kafka.validation.service;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,6 +68,8 @@ public class ValidationServiceImpl implements ValidationService{
 						creditScoreForEachLoan);
 				updatedCreditScore = creditScoreForEachLoan - myCreditScore;
 				loanDetail.setCreditScore(myCreditScore);
+				Long loanId = ThreadLocalRandom.current().nextLong(1000, 9000);
+				loanDetail.setLoanId(loanId);
 
 			}
 			processDetails.setLoanDetails(loans);
